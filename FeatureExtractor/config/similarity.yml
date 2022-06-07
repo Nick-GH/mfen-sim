@@ -1,0 +1,48 @@
+force: False
+removes: 
+  - .done
+  - .pickle
+  - .out
+
+# source code dir of projects
+source: 
+  source_dir: /source_dir
+  output_dir: /output_dir
+  output_file: source_list.txt
+
+# binary file dir 
+binary:
+  elf_dir: /source_dir
+  output_dir: /output_dir
+  output_file: input_list.txt
+
+
+include_packages:
+  - coreutils
+  - binutils
+  - findutils
+
+exclude_packages: 
+include: True
+exclude: False
+
+compilers: 
+  - gcc-8.2.0
+  - clang-7.0
+archs: 
+  - x86_64
+  - arm_32
+  - mips_32
+
+optis: 
+  - O0
+  - O1
+  - O2
+  - O3
+
+bin_names: 
+
+git_packages:
+  - openssl
+
+  
