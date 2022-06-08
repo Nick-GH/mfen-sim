@@ -11,7 +11,6 @@ FeatureExtractor/.cache
 checkpoints
 *.pickle
 *.log
-*.txt
 *.bin
 *.idx
 *.json
@@ -19,10 +18,10 @@ checkpoints
 *.pdf
 *.o
 *.tags
-MFEN-Sim/cache/*
-MFEN-Sim/data_file/*
-MFEN-Sim/checkpoints/*
-MFEN-Sim/codebert
+MFEN_Sim/cache
+MFEN_Sim/data_file
+MFEN_Sim/checkpoints
+MFEN_Sim/codebert
 *.results
 *.log
 *.db
