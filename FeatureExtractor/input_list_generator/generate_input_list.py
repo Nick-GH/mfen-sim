@@ -15,7 +15,6 @@ if __name__ == "__main__":
     with open(config_path, encoding="UTF-8") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
     # print(configs)
-    # # 读取配置
     
     force = config["force"]
     removes = config["removes"]

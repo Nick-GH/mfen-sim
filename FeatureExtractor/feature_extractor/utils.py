@@ -37,7 +37,6 @@ RESTR = (
 
 special_package = {"libcurl": "curl"}
 
-# 暂时处理一些没法对齐的包
 def transform_package_name(package):
     package = package.split("-")[0]
     if package in special_package:

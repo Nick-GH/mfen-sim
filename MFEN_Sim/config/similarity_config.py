@@ -34,8 +34,7 @@ class CustomTrainingArguments:
     patience: int = field(default=2, metadata={"help": "early stop patience"})
     tmp: float = field(default=0.05, metadata={"help": "Temperature for softmax."})
     hard_negative_weight: float = field(default=0, metadata={"help": "The **logit** of weight for hard negatives (only effective if hard negatives are used)."})
-
-    # 是否加载已有的检查点
+    
     load_checkpoint: bool = field(default=True, metadata={"help": "load from a exist checkpoint"})
     load_checkpoint_path: str = field(default="./checkpoints/similarity/sim/best/similarityBest.pth", 
         metadata={"help": "path of the exist checkpoint"})

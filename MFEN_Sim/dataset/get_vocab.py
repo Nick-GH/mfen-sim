@@ -21,7 +21,6 @@ data_file = "path_to_data_pickle"
 assert os.path.exists(data_file)
 
 if data_file.endswith(".pickle"):
-    # 效率高，内存开销大
     print("Reading functions from an aggreated pickle file")
     data = []
     with open(data_file, "rb") as f:

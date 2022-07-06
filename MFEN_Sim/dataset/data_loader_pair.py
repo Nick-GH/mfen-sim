@@ -144,7 +144,6 @@ class FuncPairDataset(Dataset):
         source_function  = self.func_datas[index]
         
 
-        # 加上相应限制
         ground_truth = source_function[-1]
         if self.arch_same:
             ground_truth += (source_function[4],)

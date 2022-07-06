@@ -216,7 +216,6 @@ class BalancedBatchSampler(BatchSampler):
         self.labels_set = set(labels)
         self.label2indices = {label: np.where(self.labels == label)[0]
                                  for label in self.labels_set}
-        # 过滤indices少于2的label
         for l in self.labels_set:
             if len(self.label2indices[l]) < 2:
                 del self.label2indices[l]

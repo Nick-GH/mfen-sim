@@ -99,7 +99,7 @@ class DBOP():
         '''
         sql = """insert into function(func_name,  bin_path, bin_name, func_pick_dumps, is_cve, cve_id, cve_description, cve_references)
                     values (?,?,?,?,?,?,?,?)"""
-        # is_cve为1
+        
         values =(func_name, bin_path, bin_name, func_pick_dump, 1, cve_id, cve_desc, cve_references) 
         try:
             cur = self.db.cursor()

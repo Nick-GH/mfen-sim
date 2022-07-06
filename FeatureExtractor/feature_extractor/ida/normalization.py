@@ -90,9 +90,7 @@ def x86_normalization(func_start_addr, inst_addr, arch):
     insn = DecodeInstruction(inst_addr)
     if not insn:
         return "", ""
-    # decode后具体的操作数信息
     ops = insn.ops
-    # jmp table 在.rodata段
     for offset in [0, 1, 2]:
         try:
             type, reg, value, addr, phrase = ops[offset].type, ops[offset].reg, ops[offset].value, ops[offset].addr, ops[offset].phrase

@@ -63,7 +63,6 @@ class DBOP():
         cur.close()
         l.info("created table function")
     
-    # 插入一般函数
     def insert_function(self, func_name, bin_path, bin_name, func_pick_dump):
         '''
         :param func_name: str
@@ -73,7 +72,6 @@ class DBOP():
         '''
         sql = """insert into function(func_name, bin_path, bin_name, func_pick_dumps, is_cve)
                     values (?,?,?,?,?)"""
-        # is_cve为0
         values =(func_name, bin_path, bin_name, func_pick_dump, 0) 
         # print(values)
         try:
@@ -87,7 +85,6 @@ class DBOP():
             # print(func_name, bin_path)
             l.error(e)
     
-    # 插入漏洞函数
     def insert_vul_function(self, func_name, bin_path, bin_name, func_pick_dump, cve_id=None, cve_desc=None, cve_references=None):
         '''
         :param func_name: str
@@ -100,7 +97,6 @@ class DBOP():
         '''
         sql = """insert into function(func_name,  bin_path, bin_name, func_pick_dumps, is_cve, cve_id, cve_description, cve_references)
                     values (?,?,?,?,?,?,?,?)"""
-        # is_cve为1
         values =(func_name, bin_path, bin_name, func_pick_dump, 1, cve_id, cve_desc, cve_references) 
         try:
             cur = self.db.cursor()

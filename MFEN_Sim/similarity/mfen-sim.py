@@ -184,8 +184,7 @@ if __name__ == "__main__":
     train_data_loader = get_batch_sample_data_loader(train_data_file, "train", tokenizer,  -1, data_args, train_args.train_batch_size, 2,  num_workers=0, collate_fn = None)
     valid_data_loader = get_batch_sample_data_loader(valid_data_file, "valid", tokenizer, -1, data_args, train_args.eval_batch_size, 2,  num_workers=0, collate_fn = None)
     test_data_loader = get_batch_sample_data_loader(test_data_file, "test", tokenizer, -1, data_args, train_args.eval_batch_size, 2, num_workers=0, collate_fn = None)
-
-    # 加载模型
+    
     model = MFEN(model_args)
     if train_args.load_checkpoint:
         print("Load checkpoint from {}".format(train_args.load_checkpoint_path))

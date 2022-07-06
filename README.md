@@ -17,7 +17,7 @@ Reverse binary files and extract features from binary functions;
 ## MFEN_Sim
 Model building and training;
 1. Use the aggerate_func_data.py and split_data.py in the dataset directory to aggregate the reverse results and divide the dataset.
-2. Pretain.py and type.py scripts in pretrain directory were used to train Bert model and fine-tune function signature prediction model for subsequent MFEN-Sim training. You need to set parameters in the config directory.
+2. Pretain.py and type.py scripts in pretrain directory are used to train BERT model and fine-tune function signature prediction model for subsequent MFEN-Sim training. You need to set parameters in the config directory.
 3. In the similarity directory, function data is first filtered through graph_filter.py, followed by generating the function signature prediction embeddings and function code literal embeddings of through embedding_generator.py. Training the MFEN model through the smfen-sim.py script. You need to set parameters in the config directory.
 
 # Application

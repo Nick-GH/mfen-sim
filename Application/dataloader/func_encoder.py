@@ -28,7 +28,7 @@ import time
 import sys
 
 from torch_geometric.data import Data
-from torch_geometric.loader import DataLoader # 使用pyg包装的dataset
+from torch_geometric.loader import DataLoader 
 import collections
 
 
@@ -58,18 +58,15 @@ class FuncEncoder(Dataset):
 
     def __init__(self,  opt, func_datas) -> None:
         self.opt = opt
-        # pretrain_tokenizer的max_length
-        # codebert_tokenizer的tokenizer按默认的512
+ 
         self.max_length = opt.max_length
 
         self.min_size = opt.min_size
-        self.max_size = opt.max_size # 设置用于过滤图的max_size
+        self.max_size = opt.max_size 
 
-        # type的max_length
         self.max_length_type = opt.max_length_type
 
         vocab_file = opt.vocab_file
-        # 加载bert和codebert的tokenizer
 
         vocab = load_vocab(vocab_file=vocab_file)
         pretrain_tokenizer = BertTokenizer(vocab_file, do_lower_case=False, do_basic_tokenize=True, never_split=vocab)
@@ -85,7 +82,6 @@ class FuncEncoder(Dataset):
     def __getitem__(self, index):
         return self.encode(self.func_datas[index])
     
-    # 传入的func_data可能是Function类
     def truncate_graph(self, func_data):
         if isinstance(func_data, Dict):
             g = nx.DiGraph()

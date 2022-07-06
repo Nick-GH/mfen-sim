@@ -87,8 +87,6 @@ class FeatureDataset(Dataset):
         print("Loading func datas from {}...".format(self.data_dir) )
         assert os.path.exists(self.data_dir)
         
-
-        # 缓存设置
         with open(file, "rb") as f:
             func_datas = pickle.load(f)
             func_datas = func_datas[:self.limit]
@@ -148,7 +146,6 @@ def collate_fn_bb(features) -> Dict[str, Tensor]:
     batch_bb_count = 0
     batch = [0]
     for i,feature in enumerate(features):
-        # feature是dict
         bb_count = feature["input_ids"].shape[0]
         batch_bb_count += bb_count
 

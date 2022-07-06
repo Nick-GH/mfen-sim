@@ -85,7 +85,6 @@ class BertDataset(Dataset):
     def __len__(self):
         return len(self.bb_pairs)
     
-    # 对数据的处理可以在加载时进行，也可以在提取数据时进行
     def __getitem__(self, index):
         bb1, bb2, nsp_label = self.get_sentence(index)
         bb1_random, bb1_label = self.random_word(bb1.split())

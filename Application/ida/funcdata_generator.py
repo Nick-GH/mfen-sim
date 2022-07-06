@@ -167,7 +167,6 @@ def get_bb_graph(caller_map, callee_map):
 
 def get_type(addr):
     tif = idaapi.tinfo_t()
-    # 获取分析type信息的结果
     res = ida_nalt.get_tinfo(tif, addr)
     funcdata = idaapi.func_type_data_t()
     tif.get_func_details(funcdata)
@@ -184,7 +183,6 @@ def read_cve_csv(csv_path):
     with open(csv_path, "r", encoding="gbk") as f:
         f_csv = csv.reader(f)
         col_names = next(f_csv)
-        # csv读取的是list格式
         for line in f_csv:
             cve_data = {}
             for i,col_name in enumerate(col_names):
@@ -265,7 +263,7 @@ class FuncDataGenerator():
             func_name = get_func_name(addr).strip()
             if len(specical_name) > 0 and specical_name != func_name:
                 continue
-            # 根据cve信息进行过滤,如果有的话
+            
             if self.cve_datas:
                 package_version = ""
                 for split in self.bin_path.split(os.sep):

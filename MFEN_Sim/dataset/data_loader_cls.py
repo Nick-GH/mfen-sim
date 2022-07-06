@@ -108,7 +108,6 @@ class BertClsDataset(Dataset):
                 abstract_args_type = function.abstract_args_type
                 arg_num = len(abstract_args_type)
                 if arg_num >= 10:
-                    # 10个以上标记为10
                     arg_num = 10
                 labels.append(arg_num)
                 for i in range(10):

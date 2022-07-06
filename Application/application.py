@@ -356,7 +356,7 @@ def parse_args_in_app():
                     help="whether delete functions which are not cve functions")
     return ap.parse_args()
 
-# CVE信息的插入,根据csv文件修改表中cve对应字段
+
 # insert CVEs according to the csv file
 # 1. extract functions from binaries and stored into db
 # 2. read the csv file and update the csv fields
